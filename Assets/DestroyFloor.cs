@@ -7,7 +7,7 @@ public class DestroyFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ChangeColor());
+        StartCoroutine(ChangeColor());     
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class DestroyFloor : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
     IEnumerator ChangeColor()//繰り返しにはwhileを使いたい

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
     }
     IEnumerator PlayerDeath()//繰り返しにはwhileを使いたい
     {
-        timeCount = 10;
+        timeCount = 7;
         StopTime = false;
         while (true)
         {
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
             {
                 transform.position = StartPosition;
                 rb.velocity = Vector3.zero;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 yield break;
             }
             
@@ -76,5 +78,6 @@ public class Player : MonoBehaviour
     {
         transform.position = StartPosition;
         rb.velocity = Vector3.zero;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
